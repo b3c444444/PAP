@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<div class="panel panel-info">
+					<div class="panel-heading">Login</div>
+			  		<div class="panel-body">
+						<form action='trata_login.php' method='post'>
+							<div class="row">
+								<label for="username">Username</label>
+								<input type='text' id = 'username' name='username' placeholder='username'>
+							</div>
+							<div class="row">
+								<label for="password">Password</label>
+								<input type="password" name="password" id="password" placeholder='password'>
+							</div>
+							<div class="row">
+								<input type="submit" value="Submeter">
+								<input type="reset" value="Limpar">
+								<a href="registar.php">Registar utilizador</a>
+							</div>
+						</form>
+
+					<?php 
+						if(isset($_GET['erroLogin'] && $_GET['erroLogin']==1)){
+						echo ' Login Invlálido!'
+					}
+					?>
+</div>
+</body>
+</html>
