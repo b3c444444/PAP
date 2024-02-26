@@ -1,0 +1,1 @@
+<?php header("location: FinalProduct/Login.php") ?>
