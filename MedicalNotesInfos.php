@@ -98,12 +98,14 @@
               <?php
               //conexao com a base de dados
               include 'ligaBD.php';
-
               if (isset($_POST['ID_PessoaX'])) {
                 $idPessoa = $_POST['ID_PessoaX'];
               } else {
+                
                 $idPessoa = $_COOKIE['idpessoa'];
               }      
+
+              echo $idPessoa;
 
               //faz a a consulta
               $GetInfosQuery = "SELECT informacoesmedicas.*, pessoa.Nome, pessoa.Data_nascimento FROM informacoesmedicas, pessoa WHERE pessoa.id_pessoa = '" . $idPessoa . "' and pessoa.id_pessoa = informacoesmedicas.id_pessoa";
@@ -143,7 +145,7 @@
                     <!--mostra o nome do utilizador-->
                     <h4>Nome:</h4>
                     <p>
-                      <?php echo $nome ?>
+                      <?php echo $nome; ?>
                     </p>
                   </div>
                 </div>
